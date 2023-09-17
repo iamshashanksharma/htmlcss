@@ -1,0 +1,23 @@
+.div1{
+    /*By default it is block means it will take whole space as width and next element will be in next line */
+  background-color: red;
+}
+.span1{
+    /*By default it is inline so it does not shift other element to new line and width and height property cannot be set */
+ background-color: cyan;
+ 
+}
+
+.img{
+    /* By default it is inline-block means it will behave like inline and width and height can be set  */
+    display:inline-block;
+    width:75px;
+    height:75px;
+}
+.span2{
+ background-color: blueviolet;
+}
+
+.div2{
+background-color: brown;
+}

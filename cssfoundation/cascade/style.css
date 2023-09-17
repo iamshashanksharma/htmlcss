@@ -1,0 +1,74 @@
+/*
+Sometimes we may have rules that conflict with one another,
+ and we end up with some unexpected results. 
+“But I wanted these paragraphs to be blue, why are they red like these other paragraphs?!”
+This happens because
+1) because of default browser styles.
+2) because of incorrect style value
+3) because of cascading .
+
+The cascade is what determines which rules apply to element.
+different factors that cascade use to determine this
+1) specificity , inheritance , rule order
+*/
+
+/*
+specificity :- css declaration which is more specific is applied to html
+like inline styles takes precedence over selectors
+now selectors are like :- class , id , type selector 
+id > class> type ( means id selector is more specific
+
+*/
+/*Both rules are using class selectors but rule 2 using more so it is applied */
+/* rule 1 */
+ .subsection {
+    color: blue;
+  }
+  
+  /* rule 2 */
+  .main .list {
+    color: red;
+  }
+ /*rule 3 */
+  .first .reddit{
+    color:yellow;
+  }
+/* rule 4 */
+  #subreddit{
+    color:purple;
+  }
+/*out of rule 3 and rule 4 rule 4 is applied because id selector is there it doesnot matter how many class selector is there */
+
+
+/*css inheritance :-
+Inheritance refers to certain CSS properties that, when applied to an element,
+ are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants.\
+ Typography based properties (color, font-size, font-family, etc.) are usually inherited, 
+ while most other properties aren’t.  */
+
+ /*Despite the parent element having a higher specificity with an ID, 
+ the child element would have the color: blue style applied since that declaration directly targets it,
+  while color: red from the parent is only inherited. */
+ #parent{
+    color:red;
+ }
+
+ .child{
+    color: blue;
+ }
+
+ /*rule order
+ The final factor, the end of the line, the tie-breaker of the tie-breaker. Let’s say that after every other factor has been taken into account, there are still multiple conflicting rules targeting an element. How does the cascade determine which rule to apply?
+
+Really simply, actually. Whichever rule was the last defined is the winner.
+.alert {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}
+For an element that has both the alert and warning classes, the cascade would run through every other factor, including inheritance (none here) and specificity (neither rule is more specific than the other). Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
+
+
+*/

@@ -1,0 +1,104 @@
+
+/*Universal selector :- it will select element of any type */
+*{
+    color: purple;
+}
+
+/*Type selector :- It will select all elements of particular type */
+
+h3{
+    color:blue;
+}
+
+/*Class selector :- It will select all element of the given class */
+
+.alert-text{
+    color:red;
+}
+
+/*Id selector :- It will select all elements with particular id */
+
+#title{
+    color:brown;
+}
+
+/*Difference b/w id and class
+id should not be used more than once in a page
+id cannot be used twice in element */
+
+/*The grouping selector */
+/*
+.read{
+    color:white;
+    background-color: black;
+}
+
+.unread{
+    color:white;
+    background-color: black;
+}
+Now to write this cleanly and short see below
+*/
+
+.read,.unread{
+    color:white;
+    background-color: black;
+}
+
+/* chaining selector */
+.subscription{
+    background-color: aquamarine;
+}
+.subscription.latest{
+    color:brown;
+}
+.subscription.previous{
+    color:darkgoldenrod;
+}
+
+/* we can chain class selector and id selector but not type selector like divp because an element cannot have same type */
+
+/* Descendant combinator
+It combines multiple selector in different way than grouping and chaining selector as they show relationship b/w selector */
+
+/*
+.ancestor .contents{
+
+} syntax : selector (space) selector
+here the style will apply to b,c not d It means child will only be selected if it is nested  */ 
+
+/* properties
+color : sets elements text color 
+background-color: sets background color of element
+Both properties can accept actual color names , hex, rgb, hsl */
+
+.colors{
+    /*hex value */
+    color:#1100ff;
+}
+.colors2{
+    /* rgb value */
+    color:rgb(100,0,127);
+}
+.colors3{
+    /* hsl value */
+    color:hsl(15,82%,56%);
+}
+
+/* typography basics and text-align */
+
+/* font-family name */
+/*It tells which font to apply to element
+we give more values as if if the left most is not selecte than next than next */
+.colors2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px; /*sets the size of font */
+    font-weight: bold; /* affects the boldness of text */
+    text-align: center; /*It will align text horizontally in the elemnent */
+}
+
+/*Image height and width */
+img{
+    height: auto;
+    width:250px;
+}
